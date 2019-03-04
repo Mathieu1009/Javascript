@@ -1,35 +1,35 @@
 'use strict';
 
-// Utilisez les méthodes text, html, val, attr pour travailler avec le HTML suivant.
+// Créez un bouton. Si ce bouton est cliqué, logguez dans la console 'Clicked!'. Si ce bouton est cliqué plus de 5 fois, enlevez son écouteur d'événement 'click'.
 
+let counter = 0;
 
+$('#js-btn').click(() =>{
+    console.log('Clicked!');
+    counter++;
+    if (counter > 5) {
+        $('#js-btn').off('click');
+    }
+    console.log('counter', counter);
+})
 
-// Récupérez et logguez dans la console le contenu du titre de la page.
+// Créez un div bleu. Si on le survole, il passe en vert. Si on sort le curseur du div, il redevient bleu. Utilisez les méthodes mouseenter, mouseleave ou hover.
 
-const h1text = $('h1').text();
-console.log('')
+$('#js-hovered').mouseenter(() => {
+    $('#js-hovered').css('background-color', 'green');
+});
+$('#js-hovered').mouseleave(() => {
+    $('#js-hovered').css('background-color', 'blue');
+});
 
-// Changez le contenu du titre de la page à 'My page title'.
+// Desactivez le comportement par defaut du click du bouton droit de la souris sur toute la page. Si le bouton a été cliqué, vérifiez si le comportement par defaut est desactivé. Dans ce cas-là, logguez dans la console 'You shall not pass'
 
+$(document).ready(function(){
+    $(document).bind("contextmenu",function(e){
+       return false;
+    });
+ });
 
-
-// Récupérez et logguez dans la console le HTML de l'article.
-
-const articleHTML = $('#js-article').html();
-
-// Changer le contenue de l'article
-
-$('#js-article').html(<h2>This is my article.</h2>
-<p>This is my article's content.</p>);
-
-
-const inputValue = $('#js-search').val();
-
-// Récupérez et logguez dans la console la valeur du champ de saisie avec l'id js-search.
-const inputValue = $('#js-search').val();
-// Changez la valeur du champ de saisie à 'Beagles'
-$('#js-search').val('Beagle');
-
-// Récupérez et logguez dans la console la valeur du placeholder du champ de saisie.
-
-// Changez la valeur du placeholder du champ de saisie à 'Search'
+ $(#js-tooltip).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+    });
