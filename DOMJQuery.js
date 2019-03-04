@@ -20,14 +20,15 @@ const articleHTML = $('#js-article').html();
 // Changer le contenue de l'article
 
 $('#js-article').html(<h2>This is my article.</h2>
-<p>This is my article's content.</p>)
+<p>This is my article's content.</p>);
 
 
 const inputValue = $('#js-search').val();
 
 // Récupérez et logguez dans la console la valeur du champ de saisie avec l'id js-search.
-
+const inputValue = $('#js-search').val();
 // Changez la valeur du champ de saisie à 'Beagles'
+$('#js-search').val('Beagle');
 
 // Récupérez et logguez dans la console la valeur du placeholder du champ de saisie.
 
